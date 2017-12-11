@@ -34,6 +34,7 @@ console.log(array);
         
         if ( a13 == k) {
           document.getElementById("rezultat").innerHTML = "Kontrolni broj je validan." 
+             makeDate();
             
         }
         else {
@@ -63,7 +64,28 @@ function isThirteen() {
     
  }
 
-
+function makeDate() {
+    
+        var jmbgInput = document.getElementById("jmbgInput");
+        var ValueJMBG = jmbgInput.value;
+        var array = ValueJMBG.split("");
+        var a1 = array[0];
+        var a2 = array[1];
+        var a3 = array[2];
+        var a4 = array[3];
+        var a5 = array[4];
+        var a6 = array[5];
+        var a7 = array[6];
+    
+        var birthDate = a1+a2+ "." + a3+a4 + "." + "1" + a5+a6+a7 + "." ; 
+         console.log(birthDate);
+    
+    if ( a5 == 0) {
+       var birthDate = a1+a2+ "." + a3+a4 + "." + "2" + a5+a6+a7 + "." ; 
+        console.log(birthDate);
+    }
+    
+}
 
 
 

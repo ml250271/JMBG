@@ -1,35 +1,47 @@
-/*
-var day;
-var month;
-var year;
-var region;
-var uniqueW;
-var uniqueM;
-var control;
-var DDMMGGGRRBBBK = [];
-var forformula = [A,B,C,D,E,F,G,H,I,J,K,L,,M];
-*/
+/*var day1;
+var day2;
+var month1;
+var month2;
+var year1;
+var year2;
+var year3;
+var region1;
+var region2;
+var uniqueW1;
+var uniqueW2;
+var uniqueW3;
+var uniqueM1;
+var uniqueM2;
+var uniqueM3;
+var control;*/
+/*function isValidDate(value) {
+    var dateWrapper = new Date(value);
+    return !isNaN(dateWrapper.getDate());
+}*/
 
-var jmbgInput =  document.getElementById("jmbgInput");
+var jmbgInput = document.getElementById("jmbgInput");
+var ValueJMBG = jmbgInput.value;
+
+function getNumbers() {
+var array = ValueJMBG.split("");
+console.log(array);
+}
+
 
 function isThirteen() {
-    var jmbgVal = jmbgInput.value;
-    console.log(jmbgVal);
-    if ( jmbgVal.length === 13) {
-        if ( day > 0 && day < 31 ) {
-            console.log(day + "day is valid")
+    
+console.log(ValueJMBG);
+    if ( ValueJMBG.length === 13) {
+        console.log("13 cifara");
             
-        } 
-        else {
-              document.getElementById("rezultat").innerHTML = "Datum nije validan";
-        }
-        
-    } else {
+            } 
+    else {
         document.getElementById("rezultat").innerHTML = "JMBG treba da ima 13 cifara."
         
     }
     
  }
+
 
 
  

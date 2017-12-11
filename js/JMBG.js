@@ -34,7 +34,8 @@ console.log(array);
         
         if ( a13 == k) {
           document.getElementById("rezultat").innerHTML = "Kontrolni broj je validan." 
-             makeDate();
+            makeDate();
+            determinSex()
             
         }
         else {
@@ -84,6 +85,22 @@ function makeDate() {
        var birthDate = a1+a2+ "." + a3+a4 + "." + "2" + a5+a6+a7 + "." ; 
         console.log(birthDate);
     }
+    
+}
+
+function determinSex() {
+        var jmbgInput = document.getElementById("jmbgInput");
+        var ValueJMBG = jmbgInput.value;
+        var array = ValueJMBG.split("");
+        var a10 = array[9];
+      
+        if (a10<5) {
+           console.log("muski");
+       }
+    
+        else {
+            console.log("zenski");
+        }
     
 }
 

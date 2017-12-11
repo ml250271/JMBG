@@ -1,9 +1,12 @@
 var jmbgInput = document.getElementById("jmbgInput");
+
+
 function getNumbers() {
-var jmbgInput = document.getElementById("jmbgInput");
+/*var jmbgInput = document.getElementById("jmbgInput");*/
 var ValueJMBG = jmbgInput.value;
 var array = ValueJMBG.split("");
 console.log(array);
+
     if (isThirteen) {
         var a1 = array[0];
         var a2 = array[1];
@@ -25,21 +28,23 @@ console.log(array);
         console.log(s,k);
         
         if ( a13 == k) {
-          document.getElementById("rezultat").innerHTML = "Kontrolni broj je validan." 
+            document.getElementById("validacija").innerHTML = "Kontrolni broj je validan." ;
             makeDate();
             determinSex();
-            determinRegion();
+            determinRegion();            
+            
+            
         }
         else {
-          document.getElementById("rezultat").innerHTML = "Kontrolni broj nije validan."   
-            determinRegion();
+          document.getElementById("validacija").innerHTML = "Kontrolni broj nije validan." ;  
+            
         }
         
         
         
     }
     else {
-        document.getElementById("rezultat").innerHTML = "JMBG treba da ima 13 cifara."
+        document.getElementById("validacija").innerHTML = "JMBG treba da ima 13 cifara." ;
     }
 }
 
@@ -78,7 +83,7 @@ function makeDate() {
        var birthDate = a1+a2+ "." + a3+a4 + "." + "2" + a5+a6+a7 + "." ; 
         console.log(birthDate);
     }
-    
+  document.getElementById("datum_rodjenja").innerHTML ="Datum rodjenja: " + birthDate;   
 }
 
 function determinSex() {
@@ -86,28 +91,31 @@ function determinSex() {
         var ValueJMBG = jmbgInput.value;
         var array = ValueJMBG.split("");
         var a10 = array[9];
-      
+        var pol;
         if (a10<5) {
            console.log("muski");
+            pol = "muski";
        }
     
         else {
             console.log("zenski");
+            pol = "zenski";
         }
-    
+   document.getElementById("pol").innerHTML ="Pol: " + pol;
 }
 
 function determinRegion() {
-        var jmbgInput = document.getElementById("jmbgInput");
         var ValueJMBG = jmbgInput.value;
         var array = ValueJMBG.split("");
         var a8= array[7];
         var a9 = array[8];
-        var Region = a8 + a9;
+        var RegionBr = a8 + a9;
+        
+    console.log(RegionBr);
         var regija;
-    console.log(Region);
-    switch (Region) {
+    switch (RegionBr) {
             
+        
         case ("01"):
             regija = "stranci u BiH";
             break;
@@ -233,10 +241,7 @@ function determinRegion() {
             break;
             
            // * 41-49 – Makedonija  
-         case ("41"):
-            regija = "stranci u BiH";
-            break;    
-            
+                     
             case ("41"):
                 regija = "Bitolj";
                 break;
@@ -265,115 +270,109 @@ function determinRegion() {
                 regija = "Štip";
                 break;
             // * 50-59 – Slovenija (samo 50 je korišteno)
-            case 50:
+        case ("50"):
                 regija = "Slovenija";
                 break;
             
             // * 70-79 – Centralna Srbija
             
-             case 70:
-                regija = "Srbija";
-                break;
-            case 71:
+             
+            case ("71"):
                 regija = "Beograd";
+             
                 break;
-            case 72:
+            case ("72"):
                 regija = "Šumadija i Pomoravlje";
                 break;
-            case 73:
+            case ("73"):
                 regija = "Niš";
                 break;
-            case 74:
+            case ("74"):
                 regija = "Južna Morava";
                 break;
-            case 75:
+            case ("75"):
                 regija = "Zaječar";
                 break;
-            case 76:
+            case ("76"):
                 regija = "Podunavlje";
                 break;
-            case 77:
+            case ("77"):
                 regija = "Podrinje i Kolubara";
                 break;
-            case 78:
+            case ("78"):
                 regija = "Kraljevo";
                 break;
-            case 79:
+            case ("79"):
                 regija = "Užice";
                 break;
             
             // * 80-89 – Autonomna Pokrajina Vojvodina
             
-            case 80:
+            case ("80"):
                 regija = "Novi Sad";
                 break;
-            case 81:
+            case ("81"):
                 regija = "Sombor";
                 break;
-            case 82:
+            case ("82"):
                 regija = "Subotica";
                 break;
-            case 83:
+            case ("83"):
                 regija = "Vojvodina";
                 break;
-            case 84:
+            case ("84"):
                 regija = "Vojvodina";
                 break;
-            case 85:
+            case ("85"):
                 regija = "Zrenjanin";
                 break;
-            case 86:
+            case ("86"):
                 regija = "Pančevo";
                 break;
-            case 87:
+            case ("87"):
                 regija = "Kikinda";
                 break;
-            case 88:
+            case ("88"):
                 regija = "Ruma";
                 break;
-            case 89:
+            case ("89"):
                 regija = "Sremska Mitrovica";
                 break;
             // * 90-99 – Autonomna Pokrajina Kosovo i Metohija
             
-             case 90:
-                regija = "Kosovo i Metohija";
-                break;
-            case 91:
+             
+            case ("91"):
                 regija = "Priština";
                 break;
-            case 92:
+            case ("92"):
                 regija = "Kosovska Mitrovica";
                 break;
 
-            case 93:
+            case ("93"):
                 regija = "Peć";
                 break;
-            case 94:
+            case ("94"):
                 regija = "Đakovica";
                 break;
-            case 95:
+            case ("95"):
                 regija = "Prizren";
                 break;
-            case 96:
+            case ("96"):
                 regija = "Kosovsko Pomoravski okrug";
                 break;
-            case 97:
-                regija = "Kosovo i Metohija";
-                break;
-            case 98:
-                regija = "Kosovo i Metohija";
-                break;
-            case 99:
-                regija = "Kosovo i Metohija";
-                break;
-            
-            default:
-                break; 
-            
+                 
     }
-   console.log(regija); 
+    
+    console.log(regija); 
+    document.getElementById("okrug").innerHTML= "Okrug: " + regija;
+         
+
 }
+
+/*function writeRegion() {
+    
+    document.getElementById("ispisiRegion").innerHTML=RegionBr;
+}*/
 
 
 
